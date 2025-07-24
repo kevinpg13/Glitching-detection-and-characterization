@@ -1,1 +1,163 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
+library UNISIM;
+use UNISIM.VComponents.all;
+
+entity STAGES is
+    Port (
+        start_pulse : in  STD_LOGIC;
+        co_taps     : out STD_LOGIC_VECTOR(255 downto 0)
+    );
+end STAGES;
+
+architecture Structural of STAGES is
+
+    signal co    : STD_LOGIC_VECTOR(255 downto 0);
+    signal s     : STD_LOGIC_VECTOR(255 downto 0) := (others => '1');
+    signal di    : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
+    signal o_dummy : STD_LOGIC_VECTOR(3 downto 0);
+
+    attribute RLOC : string;
+    attribute KEEP : string;
+    attribute DONT_TOUCH : string;
+
+    attribute KEEP of co : signal is "true";
+    attribute DONT_TOUCH of co : signal is "true";
+
+    -- RLOCs automáticos
+    attribute RLOC of U_CARRY0 : label is "X0Y0";
+    attribute RLOC of U_CARRY1 : label is "X0Y1";
+    attribute RLOC of U_CARRY2 : label is "X0Y2";
+    attribute RLOC of U_CARRY3 : label is "X0Y3";
+    attribute RLOC of U_CARRY4 : label is "X0Y4";
+    attribute RLOC of U_CARRY5 : label is "X0Y5";
+    attribute RLOC of U_CARRY6 : label is "X0Y6";
+    attribute RLOC of U_CARRY7 : label is "X0Y7";
+    attribute RLOC of U_CARRY8 : label is "X0Y8";
+    attribute RLOC of U_CARRY9 : label is "X0Y9";
+    attribute RLOC of U_CARRY10 : label is "X0Y10";
+    attribute RLOC of U_CARRY11 : label is "X0Y11";
+    attribute RLOC of U_CARRY12 : label is "X0Y12";
+    attribute RLOC of U_CARRY13 : label is "X0Y13";
+    attribute RLOC of U_CARRY14 : label is "X0Y14";
+    attribute RLOC of U_CARRY15 : label is "X0Y15";
+    attribute RLOC of U_CARRY16 : label is "X0Y16";
+    attribute RLOC of U_CARRY17 : label is "X0Y17";
+    attribute RLOC of U_CARRY18 : label is "X0Y18";
+    attribute RLOC of U_CARRY19 : label is "X0Y19";
+    attribute RLOC of U_CARRY20 : label is "X0Y20";
+    attribute RLOC of U_CARRY21 : label is "X0Y21";
+    attribute RLOC of U_CARRY22 : label is "X0Y22";
+    attribute RLOC of U_CARRY23 : label is "X0Y23";
+    attribute RLOC of U_CARRY24 : label is "X0Y24";
+    attribute RLOC of U_CARRY25 : label is "X0Y25";
+    attribute RLOC of U_CARRY26 : label is "X0Y26";
+    attribute RLOC of U_CARRY27 : label is "X0Y27";
+    attribute RLOC of U_CARRY28 : label is "X0Y28";
+    attribute RLOC of U_CARRY29 : label is "X0Y29";
+    attribute RLOC of U_CARRY30 : label is "X0Y30";
+    attribute RLOC of U_CARRY31 : label is "X0Y31";
+    attribute RLOC of U_CARRY32 : label is "X0Y32";
+    attribute RLOC of U_CARRY33 : label is "X0Y33";
+    attribute RLOC of U_CARRY34 : label is "X0Y34";
+    attribute RLOC of U_CARRY35 : label is "X0Y35";
+    attribute RLOC of U_CARRY36 : label is "X0Y36";
+    attribute RLOC of U_CARRY37 : label is "X0Y37";
+    attribute RLOC of U_CARRY38 : label is "X0Y38";
+    attribute RLOC of U_CARRY39 : label is "X0Y39";
+    attribute RLOC of U_CARRY40 : label is "X0Y40";
+    attribute RLOC of U_CARRY41 : label is "X0Y41";
+    attribute RLOC of U_CARRY42 : label is "X0Y42";
+    attribute RLOC of U_CARRY43 : label is "X0Y43";
+    attribute RLOC of U_CARRY44 : label is "X0Y44";
+    attribute RLOC of U_CARRY45 : label is "X0Y45";
+    attribute RLOC of U_CARRY46 : label is "X0Y46";
+    attribute RLOC of U_CARRY47 : label is "X0Y47";
+    attribute RLOC of U_CARRY48 : label is "X0Y48";
+    attribute RLOC of U_CARRY49 : label is "X0Y49";
+    attribute RLOC of U_CARRY50 : label is "X0Y50";
+    attribute RLOC of U_CARRY51 : label is "X0Y51";
+    attribute RLOC of U_CARRY52 : label is "X0Y52";
+    attribute RLOC of U_CARRY53 : label is "X0Y53";
+    attribute RLOC of U_CARRY54 : label is "X0Y54";
+    attribute RLOC of U_CARRY55 : label is "X0Y55";
+    attribute RLOC of U_CARRY56 : label is "X0Y56";
+    attribute RLOC of U_CARRY57 : label is "X0Y57";
+    attribute RLOC of U_CARRY58 : label is "X0Y58";
+    attribute RLOC of U_CARRY59 : label is "X0Y59";
+    attribute RLOC of U_CARRY60 : label is "X0Y60";
+    attribute RLOC of U_CARRY61 : label is "X0Y61";
+    attribute RLOC of U_CARRY62 : label is "X0Y62";
+    attribute RLOC of U_CARRY63 : label is "X0Y63";
+begin
+
+-- Instancias CARRY4
+ U_CARRY0 : CARRY4 port map (CI => '0', CYINIT => start_pulse, DI => di, S => s(3 downto 0), CO => co(3 downto 0), O => o_dummy);
+ U_CARRY1 : CARRY4 port map (CI => co(3), CYINIT => '0', DI => di, S => s(7 downto 4), CO => co(7 downto 4), O => o_dummy);
+ U_CARRY2 : CARRY4 port map (CI => co(7), CYINIT => '0', DI => di, S => s(11 downto 8), CO => co(11 downto 8), O => o_dummy);
+ U_CARRY3 : CARRY4 port map (CI => co(11), CYINIT => '0', DI => di, S => s(15 downto 12), CO => co(15 downto 12), O => o_dummy);
+ U_CARRY4 : CARRY4 port map (CI => co(15), CYINIT => '0', DI => di, S => s(19 downto 16), CO => co(19 downto 16), O => o_dummy);
+ U_CARRY5 : CARRY4 port map (CI => co(19), CYINIT => '0', DI => di, S => s(23 downto 20), CO => co(23 downto 20), O => o_dummy);
+ U_CARRY6 : CARRY4 port map (CI => co(23), CYINIT => '0', DI => di, S => s(27 downto 24), CO => co(27 downto 24), O => o_dummy);
+ U_CARRY7 : CARRY4 port map (CI => co(27), CYINIT => '0', DI => di, S => s(31 downto 28), CO => co(31 downto 28), O => o_dummy);
+ U_CARRY8 : CARRY4 port map (CI => co(31), CYINIT => '0', DI => di, S => s(35 downto 32), CO => co(35 downto 32), O => o_dummy);
+ U_CARRY9 : CARRY4 port map (CI => co(35), CYINIT => '0', DI => di, S => s(39 downto 36), CO => co(39 downto 36), O => o_dummy);
+ U_CARRY10 : CARRY4 port map (CI => co(39), CYINIT => '0', DI => di, S => s(43 downto 40), CO => co(43 downto 40), O => o_dummy);
+ U_CARRY11 : CARRY4 port map (CI => co(43), CYINIT => '0', DI => di, S => s(47 downto 44), CO => co(47 downto 44), O => o_dummy);
+ U_CARRY12 : CARRY4 port map (CI => co(47), CYINIT => '0', DI => di, S => s(51 downto 48), CO => co(51 downto 48), O => o_dummy);
+ U_CARRY13 : CARRY4 port map (CI => co(51), CYINIT => '0', DI => di, S => s(55 downto 52), CO => co(55 downto 52), O => o_dummy);
+ U_CARRY14 : CARRY4 port map (CI => co(55), CYINIT => '0', DI => di, S => s(59 downto 56), CO => co(59 downto 56), O => o_dummy);
+ U_CARRY15 : CARRY4 port map (CI => co(59), CYINIT => '0', DI => di, S => s(63 downto 60), CO => co(63 downto 60), O => o_dummy);
+ U_CARRY16 : CARRY4 port map (CI => co(63), CYINIT => '0', DI => di, S => s(67 downto 64), CO => co(67 downto 64), O => o_dummy);
+ U_CARRY17 : CARRY4 port map (CI => co(67), CYINIT => '0', DI => di, S => s(71 downto 68), CO => co(71 downto 68), O => o_dummy);
+ U_CARRY18 : CARRY4 port map (CI => co(71), CYINIT => '0', DI => di, S => s(75 downto 72), CO => co(75 downto 72), O => o_dummy);
+ U_CARRY19 : CARRY4 port map (CI => co(75), CYINIT => '0', DI => di, S => s(79 downto 76), CO => co(79 downto 76), O => o_dummy);
+ U_CARRY20 : CARRY4 port map (CI => co(79), CYINIT => '0', DI => di, S => s(83 downto 80), CO => co(83 downto 80), O => o_dummy);
+ U_CARRY21 : CARRY4 port map (CI => co(83), CYINIT => '0', DI => di, S => s(87 downto 84), CO => co(87 downto 84), O => o_dummy);
+ U_CARRY22 : CARRY4 port map (CI => co(87), CYINIT => '0', DI => di, S => s(91 downto 88), CO => co(91 downto 88), O => o_dummy);
+ U_CARRY23 : CARRY4 port map (CI => co(91), CYINIT => '0', DI => di, S => s(95 downto 92), CO => co(95 downto 92), O => o_dummy);
+ U_CARRY24 : CARRY4 port map (CI => co(95), CYINIT => '0', DI => di, S => s(99 downto 96), CO => co(99 downto 96), O => o_dummy);
+ U_CARRY25 : CARRY4 port map (CI => co(99), CYINIT => '0', DI => di, S => s(103 downto 100), CO => co(103 downto 100), O => o_dummy);
+ U_CARRY26 : CARRY4 port map (CI => co(103), CYINIT => '0', DI => di, S => s(107 downto 104), CO => co(107 downto 104), O => o_dummy);
+ U_CARRY27 : CARRY4 port map (CI => co(107), CYINIT => '0', DI => di, S => s(111 downto 108), CO => co(111 downto 108), O => o_dummy);
+ U_CARRY28 : CARRY4 port map (CI => co(111), CYINIT => '0', DI => di, S => s(115 downto 112), CO => co(115 downto 112), O => o_dummy);
+ U_CARRY29 : CARRY4 port map (CI => co(115), CYINIT => '0', DI => di, S => s(119 downto 116), CO => co(119 downto 116), O => o_dummy);
+ U_CARRY30 : CARRY4 port map (CI => co(119), CYINIT => '0', DI => di, S => s(123 downto 120), CO => co(123 downto 120), O => o_dummy);
+ U_CARRY31 : CARRY4 port map (CI => co(123), CYINIT => '0', DI => di, S => s(127 downto 124), CO => co(127 downto 124), O => o_dummy);
+ U_CARRY32 : CARRY4 port map (CI => co(127), CYINIT => '0', DI => di, S => s(131 downto 128), CO => co(131 downto 128), O => o_dummy);
+ U_CARRY33 : CARRY4 port map (CI => co(131), CYINIT => '0', DI => di, S => s(135 downto 132), CO => co(135 downto 132), O => o_dummy);
+ U_CARRY34 : CARRY4 port map (CI => co(135), CYINIT => '0', DI => di, S => s(139 downto 136), CO => co(139 downto 136), O => o_dummy);
+ U_CARRY35 : CARRY4 port map (CI => co(139), CYINIT => '0', DI => di, S => s(143 downto 140), CO => co(143 downto 140), O => o_dummy);
+ U_CARRY36 : CARRY4 port map (CI => co(143), CYINIT => '0', DI => di, S => s(147 downto 144), CO => co(147 downto 144), O => o_dummy);
+ U_CARRY37 : CARRY4 port map (CI => co(147), CYINIT => '0', DI => di, S => s(151 downto 148), CO => co(151 downto 148), O => o_dummy);
+ U_CARRY38 : CARRY4 port map (CI => co(151), CYINIT => '0', DI => di, S => s(155 downto 152), CO => co(155 downto 152), O => o_dummy);
+ U_CARRY39 : CARRY4 port map (CI => co(155), CYINIT => '0', DI => di, S => s(159 downto 156), CO => co(159 downto 156), O => o_dummy);
+ U_CARRY40 : CARRY4 port map (CI => co(159), CYINIT => '0', DI => di, S => s(163 downto 160), CO => co(163 downto 160), O => o_dummy);
+ U_CARRY41 : CARRY4 port map (CI => co(163), CYINIT => '0', DI => di, S => s(167 downto 164), CO => co(167 downto 164), O => o_dummy);
+ U_CARRY42 : CARRY4 port map (CI => co(167), CYINIT => '0', DI => di, S => s(171 downto 168), CO => co(171 downto 168), O => o_dummy);
+ U_CARRY43 : CARRY4 port map (CI => co(171), CYINIT => '0', DI => di, S => s(175 downto 172), CO => co(175 downto 172), O => o_dummy);
+ U_CARRY44 : CARRY4 port map (CI => co(175), CYINIT => '0', DI => di, S => s(179 downto 176), CO => co(179 downto 176), O => o_dummy);
+ U_CARRY45 : CARRY4 port map (CI => co(179), CYINIT => '0', DI => di, S => s(183 downto 180), CO => co(183 downto 180), O => o_dummy);
+ U_CARRY46 : CARRY4 port map (CI => co(183), CYINIT => '0', DI => di, S => s(187 downto 184), CO => co(187 downto 184), O => o_dummy);
+ U_CARRY47 : CARRY4 port map (CI => co(187), CYINIT => '0', DI => di, S => s(191 downto 188), CO => co(191 downto 188), O => o_dummy);
+ U_CARRY48 : CARRY4 port map (CI => co(191), CYINIT => '0', DI => di, S => s(195 downto 192), CO => co(195 downto 192), O => o_dummy);
+ U_CARRY49 : CARRY4 port map (CI => co(195), CYINIT => '0', DI => di, S => s(199 downto 196), CO => co(199 downto 196), O => o_dummy);
+ U_CARRY50 : CARRY4 port map (CI => co(199), CYINIT => '0', DI => di, S => s(203 downto 200), CO => co(203 downto 200), O => o_dummy);
+ U_CARRY51 : CARRY4 port map (CI => co(203), CYINIT => '0', DI => di, S => s(207 downto 204), CO => co(207 downto 204), O => o_dummy);
+ U_CARRY52 : CARRY4 port map (CI => co(207), CYINIT => '0', DI => di, S => s(211 downto 208), CO => co(211 downto 208), O => o_dummy);
+ U_CARRY53 : CARRY4 port map (CI => co(211), CYINIT => '0', DI => di, S => s(215 downto 212), CO => co(215 downto 212), O => o_dummy);
+ U_CARRY54 : CARRY4 port map (CI => co(215), CYINIT => '0', DI => di, S => s(219 downto 216), CO => co(219 downto 216), O => o_dummy);
+ U_CARRY55 : CARRY4 port map (CI => co(219), CYINIT => '0', DI => di, S => s(223 downto 220), CO => co(223 downto 220), O => o_dummy);
+ U_CARRY56 : CARRY4 port map (CI => co(223), CYINIT => '0', DI => di, S => s(227 downto 224), CO => co(227 downto 224), O => o_dummy);
+ U_CARRY57 : CARRY4 port map (CI => co(227), CYINIT => '0', DI => di, S => s(231 downto 228), CO => co(231 downto 228), O => o_dummy);
+ U_CARRY58 : CARRY4 port map (CI => co(231), CYINIT => '0', DI => di, S => s(235 downto 232), CO => co(235 downto 232), O => o_dummy);
+ U_CARRY59 : CARRY4 port map (CI => co(235), CYINIT => '0', DI => di, S => s(239 downto 236), CO => co(239 downto 236), O => o_dummy);
+ U_CARRY60 : CARRY4 port map (CI => co(239), CYINIT => '0', DI => di, S => s(243 downto 240), CO => co(243 downto 240), O => o_dummy);
+ U_CARRY61 : CARRY4 port map (CI => co(243), CYINIT => '0', DI => di, S => s(247 downto 244), CO => co(247 downto 244), O => o_dummy);
+ U_CARRY62 : CARRY4 port map (CI => co(247), CYINIT => '0', DI => di, S => s(251 downto 248), CO => co(251 downto 248), O => o_dummy);
+ U_CARRY63 : CARRY4 port map (CI => co(251), CYINIT => '0', DI => di, S => s(255 downto 252), CO => co(255 downto 252), O => o_dummy);
+
+-- Salida final
+ co_taps <= co;
+end Structural;
