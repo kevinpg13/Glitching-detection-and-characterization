@@ -1,1 +1,40 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
+library UNISIM;
+use UNISIM.VComponents.all;
+
+entity delay_reset is
+    Port (
+        start_pulse : in  STD_LOGIC;
+        co_taps     : out STD_LOGIC_VECTOR(3 downto 0)
+    );
+end delay_reset;
+
+architecture Structural of delay_reset is
+
+    signal s   : STD_LOGIC_VECTOR(3 downto 0) := (others => '1');
+    signal di  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
+    signal co  : STD_LOGIC_VECTOR(3 downto 0);
+    signal o_dummy : STD_LOGIC_VECTOR(3 downto 0);
+
+    -- Protección contra optimización
+    --attribute KEEP, DONT_TOUCH : string;
+    --attribute KEEP of co : signal is "true";
+    --attribute DONT_TOUCH of co : signal is "true";
+
+begin
+
+    U_CARRY : CARRY4
+    port map (
+        CI     => '0',
+        CYINIT => start_pulse,
+        DI     => di,
+        S      => s,
+        CO     => co,
+        O      => o_dummy
+    );
+
+    co_taps <= co;
+
+end Structural;
