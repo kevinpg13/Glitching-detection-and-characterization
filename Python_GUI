@@ -1,1 +1,545 @@
+# # # import serial
+# # # import threading
+# # # from tkinter import *
+# # # from tkinter import ttk
+# # # import matplotlib.pyplot as plt
+# # # from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+# # # import time
+# # # import csv
+# # # import os
+
+# # # # Serial config
+# # # SERIAL_PORT = 'COM11'
+# # # BAUD_RATE = 115200
+
+# # # # Data storage
+# # # time_list = []
+# # # glitch_counter_list = []
+
+# # # # Packet count
+# # # packet_count = 0
+
+# # # # Start time
+# # # start_time = None  # Will store time when signal is received
+
+# # # # CSV setup
+# # # csv_filename = "glitch_log.csv"
+# # # csv_headers = ["Glitch Count", "One Second Pulse", "Hazard Type", "Time (s)"]
+
+# # # with open(csv_filename, mode='w', newline='') as file:
+# # #     writer = csv.writer(file)
+# # #     writer.writerow(csv_headers)
+
+# # # # Decode the 16-bit packet
+# # # def decode_packet(packet):
+# # #     glitch_counter = packet & 0x3FFF       # bits 14–0
+# # #     hazard         = (packet >> 15) & 0x01 # bit 15
+# # #     return glitch_counter, one_sec, hazard
+
+# # # # Update the matplotlib plot
+# # # def update_plot():
+# # #     ax.clear()
+# # #     ax.plot(time_list, glitch_counter_list, marker='o')
+# # #     ax.set_title("Glitch Events Over Time")
+# # #     ax.set_xlabel("Glitch Count")
+# # #     ax.set_ylabel("Packet Index")
+# # #     ax.grid(True)
+# # #     canvas.draw()
+
+# # # def insert_packet(packet):
+# # #     global packet_count
+# # #     glitch_count, one_sec, hazard = decode_packet(packet)
+
+# # #     if glitch_count == 0:
+# # #         return  # Ignore if no glitch has occurred
+
+# # #     # Compute time since start
+# # #     timestamp = round(time.time() - start_time, 3) if start_time else 0.0
+
+# # #     # Insert row into GUI table
+# # #     tree.insert("", "end", values=(glitch_count, one_sec, hazard, f"{timestamp:.3f}"))
+
+# # #     # Append to plot
+# # #     time_list.append(timestamp)
+# # #     glitch_counter_list.append(packet_count)
+# # #     update_plot()
+
+# # #     # Update packet count
+# # #     packet_count += 1
+# # #     counter_label.config(text=f"Packets received: {packet_count}")
+
+# # #     # Save to CSV
+# # #     with open(csv_filename, mode='a', newline='') as file:
+# # #         writer = csv.writer(file)
+# # #         writer.writerow([glitch_count, one_sec, hazard, f"{timestamp:.3f}"])
+
+
+# # # # Background thread to read from serial
+# # # def read_serial():
+# # #     global start_time
+# # #     try:
+# # #         ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+# # #         ser.reset_input_buffer()
+# # #         print("Serial port opened and input buffer flushed.")
+
+# # #         while True:
+# # #             if ser.in_waiting >= 2:
+# # #                 data = ser.read(2)
+# # #                 if len(data) == 2:
+# # #                     packet = int.from_bytes(data, byteorder='big')
+
+# # #                     # 🟢 Check for special start signal (0xFFFF)
+# # #                     if packet == 0xFFFF and start_time is None:
+# # #                         start_time = time.time()
+# # #                         print("⏱️ Timer started at:", start_time)
+# # #                         continue  # Skip inserting this as glitch data
+
+# # #                     # Only process if real glitch data
+# # #                     if packet != 0xFFFF and start_time is not None:
+# # #                         insert_packet(packet)
+
+# # #     except serial.SerialException as e:
+# # #         print(f"Serial error: {e}")
+
+
+# # # # Live elapsed time updater
+# # # def update_time():
+# # #     if start_time is not None:
+# # #         elapsed = time.time() - start_time
+# # #         time_label.config(text=f"Elapsed Time: {elapsed:.2f} s")
+# # #     root.after(100, update_time)
+
+# # # # --- GUI Setup ---
+# # # root = Tk()
+# # # root.title("Glitch Monitor Table + Graph")
+
+# # # # Time display
+# # # time_label = Label(root, text="Time since start: 0.00 s", font=("Arial", 12))
+# # # time_label.pack(pady=(10, 0))
+
+# # # # Packet count display
+# # # counter_label = Label(root, text="Packets received: 0", font=("Arial", 12))
+# # # counter_label.pack(pady=(5, 0))
+
+# # # # Data Table
+# # # columns = ("Glitch Count", "One Second Pulse", "Hazard Type", "Time (s)")
+
+# # # tree = ttk.Treeview(root, columns=columns, show="headings", height=8)
+# # # for col in columns:
+# # #     tree.heading(col, text=col)
+# # #     tree.column(col, width=120, anchor="center")
+# # # tree.pack(padx=10, pady=10, fill="x")
+
+# # # # Plot Area
+# # # fig, ax = plt.subplots(figsize=(6, 4))
+# # # canvas = FigureCanvasTkAgg(fig, master=root)
+# # # canvas.get_tk_widget().pack(padx=10, pady=10, fill="both", expand=True)
+
+# # # # Start reading and updating time
+# # # threading.Thread(target=read_serial, daemon=True).start()
+# # # update_time()
+
+# # # root.mainloop()
+
+# # import serial
+# # import threading
+# # from tkinter import *
+# # from tkinter import ttk
+# # import matplotlib.pyplot as plt
+# # from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+# # import time
+# # import csv
+# # import os
+
+# # # Serial config
+# # SERIAL_PORT = 'COM11'
+# # BAUD_RATE = 115200
+
+# # # Data storage
+# # time_list = []
+# # glitch_counter_list = []
+
+# # # Packet count
+# # packet_count = 0
+
+# # # Start time
+# # start_time = None  # Will store time when signal is received
+
+# # # CSV setup
+# # csv_filename = "glitch_log.csv"
+# # csv_headers = ["Glitch Count", "Hazard Type", "Time (s)"]
+
+# # with open(csv_filename, mode='w', newline='') as file:
+# #     writer = csv.writer(file)
+# #     writer.writerow(csv_headers)
+
+# # # Decode the 16-bit packet
+# # def decode_packet(packet):
+# #     glitch_counter = packet & 0x7FFF       # bits 14–0 (15-bit counter)
+# #     hazard         = (packet >> 15) & 0x01 # bit 15
+# #     return glitch_counter, hazard
+
+# # # Update the matplotlib plot
+# # def update_plot():
+# #     ax.clear()
+# #     ax.plot(time_list, glitch_counter_list, marker='o')
+# #     ax.set_title("Glitch Events Over Time")
+# #     ax.set_xlabel("Time (s)")
+# #     ax.set_ylabel("Glitch Count")
+# #     ax.grid(True)
+# #     canvas.draw()
+
+# # def insert_packet(packet):
+# #     global packet_count
+# #     glitch_count, hazard = decode_packet(packet)
+
+# #     if glitch_count == 0:
+# #         return  # Ignore if no glitch has occurred
+
+# #     # Compute time since start
+# #     timestamp = round(time.time() - start_time, 3) if start_time else 0.0
+
+# #     # Insert row into GUI table
+# #     tree.insert("", "end", values=(glitch_count, hazard, f"{timestamp:.3f}"))
+
+# #     # Append to plot
+# #     time_list.append(timestamp)
+# #     glitch_counter_list.append(glitch_count)
+# #     update_plot()
+
+# #     # Update packet count
+# #     packet_count += 1
+# #     counter_label.config(text=f"Packets received: {packet_count}")
+
+# #     # Save to CSV
+# #     with open(csv_filename, mode='a', newline='') as file:
+# #         writer = csv.writer(file)
+# #         writer.writerow([glitch_count, hazard, f"{timestamp:.3f}"])
+
+# # # Background thread to read from serial
+# # def read_serial():
+# #     global start_time
+# #     try:
+# #         ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+# #         ser.reset_input_buffer()
+# #         print("Serial port opened and input buffer flushed.")
+
+# #         while True:
+# #             if ser.in_waiting >= 2:
+# #                 data = ser.read(2)
+# #                 if len(data) == 2:
+# #                     packet = int.from_bytes(data, byteorder='big')
+
+# #                     # 🟢 Special start signal
+# #                     if packet == 0xFFFF and start_time is None:
+# #                         start_time = time.time()
+# #                         print("⏱️ Timer started at:", start_time)
+# #                         continue  # Skip inserting this as glitch data
+
+# #                     # Process valid glitch packets
+# #                     if packet != 0xFFFF and start_time is not None:
+# #                         insert_packet(packet)
+
+# #     except serial.SerialException as e:
+# #         print(f"Serial error: {e}")
+
+# # # Live elapsed time updater
+# # def update_time():
+# #     if start_time is not None:
+# #         elapsed = time.time() - start_time
+# #         time_label.config(text=f"Elapsed Time: {elapsed:.2f} s")
+# #     root.after(100, update_time)
+
+# # # --- GUI Setup ---
+# # root = Tk()
+# # root.title("Glitch Monitor Table + Graph")
+
+# # # Time display
+# # time_label = Label(root, text="Time since start: 0.00 s", font=("Arial", 12))
+# # time_label.pack(pady=(10, 0))
+
+# # # Packet count display
+# # counter_label = Label(root, text="Packets received: 0", font=("Arial", 12))
+# # counter_label.pack(pady=(5, 0))
+
+# # # Data Table
+# # columns = ("Glitch Count", "Hazard Type", "Time (s)")
+
+# # tree = ttk.Treeview(root, columns=columns, show="headings", height=8)
+# # for col in columns:
+# #     tree.heading(col, text=col)
+# #     tree.column(col, width=120, anchor="center")
+# # tree.pack(padx=10, pady=10, fill="x")
+
+# # # Plot Area
+# # fig, ax = plt.subplots(figsize=(6, 4))
+# # canvas = FigureCanvasTkAgg(fig, master=root)
+# # canvas.get_tk_widget().pack(padx=10, pady=10, fill="both", expand=True)
+
+# # # Start reading and updating time
+# # threading.Thread(target=read_serial, daemon=True).start()
+# # update_time()
+
+# # root.mainloop()
+
+# import serial
+# import threading
+# from tkinter import *
+# from tkinter import ttk
+# import matplotlib.pyplot as plt
+# from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+# import time
+# import csv
+
+# # Serial config
+# SERIAL_PORT = 'COM11'
+# BAUD_RATE = 115200
+
+# # TDC resolution (ns per stage)
+# DELTA_TIME_NS = 0.013  # 13 ps delta t
+
+# # Data storage
+# packet_count = 0
+# glitch_count_per_sec = 0
+# glitch_rate_per_second = []
+
+# # Timing
+# start_time = None  # Will be set on first packet received
+
+# # CSV setup
+# csv_filename = "glitch_log.csv"
+# csv_headers = ["Glitch Width (ns)", "Time (s)", "Hazard Type (H/L)"]
+# with open(csv_filename, mode='w', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(csv_headers)
+
+# # Decode the 16-bit packet
+# def decode_packet(packet):
+#     hazard_type = (packet >> 15) & 0x01      # Bit 15 = hazard
+#     tdc_value = packet & 0x7FFF              # Bits 14-0 = TDC width
+#     glitch_width_ns = tdc_value * DELTA_TIME_NS
+#     return glitch_width_ns, hazard_type
+
+# # Insert and handle new packet
+# def insert_packet(packet):
+#     global packet_count, glitch_count_per_sec, start_time
+
+#     # Optional: skip special start packet if you're using 0xFFFF to sync
+#     if packet == 0xFFFF:
+#         if start_time is None:
+#             start_time = time.time()
+#             print("Timer started")
+#         return
+
+#     if start_time is None:
+#         # Set reference time on first valid data packet
+#         start_time = time.time()
+
+#     glitch_width_ns, hazard_type = decode_packet(packet)
+#     glitch_count_per_sec += 1
+
+#     # Adjusted timestamp
+#     current_time = round(time.time() - start_time, 2)
+
+#     # Update table
+#     tree.insert("", "end", values=(
+#         glitch_width_ns,
+#         current_time,
+#         "HIGH" if hazard_type else "LOW"
+#     ))
+
+#     # Update GUI counter
+#     packet_count += 1
+#     counter_label.config(text=f"Glitches detected: {packet_count}")
+
+#     # Write to CSV
+#     with open(csv_filename, mode='a', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow([glitch_width_ns, current_time, "HIGH" if hazard_type else "LOW"])
+
+# # Plot glitch rate per second
+# def update_distribution_chart():
+#     global glitch_count_per_sec
+
+#     glitch_rate_per_second.append(glitch_count_per_sec)
+
+#     ax.clear()
+#     ax.bar(range(len(glitch_rate_per_second)), glitch_rate_per_second)
+#     ax.set_title("Glitches per Second")
+#     ax.set_xlabel("Time (s)")
+#     ax.set_ylabel("Glitch Count")
+#     ax.grid(True)
+#     canvas.draw()
+
+#     glitch_count_per_sec = 0  # Reset for next second
+#     root.after(1000, update_distribution_chart)
+
+# # Serial reader thread
+# def read_serial():
+#     try:
+#         ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+#         print("Serial port opened.")
+#         while True:
+#             if ser.in_waiting >= 2:
+#                 data = ser.read(2)
+#                 packet = int.from_bytes(data, byteorder='big')
+#                 insert_packet(packet)
+#     except serial.SerialException as e:
+#         print(f"Serial error: {e}")
+
+# # GUI setup
+# root = Tk()
+# root.title("Glitch Detection & Characterization")
+
+# # Glitch counter label
+# counter_label = Label(root, text="Glitches detected: 0", font=("Arial", 12))
+# counter_label.pack(pady=(10, 0))
+
+# # Table
+# columns = ("Glitch Width (ns)", "Time (s)", "Hazard Type (H/L)")
+# tree = ttk.Treeview(root, columns=columns, show="headings", height=8)
+# for col in columns:
+#     tree.heading(col, text=col)
+#     tree.column(col, width=150, anchor="center")
+# tree.pack(padx=10, pady=10, fill="x")
+
+# # Matplotlib chart
+# fig, ax = plt.subplots(figsize=(6, 4))
+# canvas = FigureCanvasTkAgg(fig, master=root)
+# canvas.get_tk_widget().pack(padx=10, pady=10, fill="both", expand=True)
+
+# # Start serial thread and chart loop
+# threading.Thread(target=read_serial, daemon=True).start()
+# root.after(1000, update_distribution_chart)
+
+# root.mainloop()
+
+import serial
+import threading
+from tkinter import *
+from tkinter import ttk
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import time
+import csv
+
+# Serial config
+SERIAL_PORT = 'COM11'
+BAUD_RATE = 115200
+
+# TDC resolution (ns per stage)
+DELTA_TIME_NS = 0.013
+
+# Data storage
+packet_count = 0
+glitch_count_per_sec = 0
+glitch_rate_per_second = []
+
+# Timing
+start_time = None  # Will be set on first packet received
+
+# CSV setup
+csv_filename = "glitch_log.csv"
+csv_headers = ["Glitch Width (ns)", "TDC Value", "Time (s)", "Glitch State (H/L)"]
+with open(csv_filename, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(csv_headers)
+
+# Decode the 16-bit packet
+def decode_packet(packet):
+    glitch_state = (packet >> 15) & 0x01        # Bit 15
+    tdc_code     = (packet >> 7) & 0xFF          # Bits 14–7 (8-bit TDC code)
+    glitch_ctr   = packet & 0x7F                 # Bits 6–0 (7-bit, unused here)
+    glitch_width_ns = tdc_code * DELTA_TIME_NS
+    return glitch_width_ns, tdc_code, glitch_state
+
+# Insert and handle new packet
+def insert_packet(packet):
+    global packet_count, glitch_count_per_sec, start_time
+
+    if packet == 0xFFFF:
+        if start_time is None:
+            start_time = time.time()
+            print("Timer started")
+        return
+
+    if start_time is None:
+        start_time = time.time()
+
+    glitch_width_ns, tdc_code, glitch_state = decode_packet(packet)
+    glitch_count_per_sec += 1
+    current_time = round(time.time() - start_time, 2)
+
+    # Update table
+    tree.insert("", "end", values=(
+        glitch_width_ns,
+        tdc_code,
+        current_time,
+        "HIGH" if glitch_state else "LOW"
+    ))
+
+    # Update counter
+    packet_count += 1
+    counter_label.config(text=f"Glitches detected: {packet_count}")
+
+    # Write to CSV
+    with open(csv_filename, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([glitch_width_ns, tdc_code, current_time, "HIGH" if glitch_state else "LOW"])
+
+# Plot glitch rate per second
+def update_distribution_chart():
+    global glitch_count_per_sec
+    glitch_rate_per_second.append(glitch_count_per_sec)
+
+    ax.clear()
+    ax.bar(range(len(glitch_rate_per_second)), glitch_rate_per_second)
+    ax.set_title("Glitches per Second")
+    ax.set_xlabel("Time (s)")
+    ax.set_ylabel("Glitch Count")
+    ax.grid(True)
+    canvas.draw()
+
+    glitch_count_per_sec = 0
+    root.after(1000, update_distribution_chart)
+
+# Serial thread
+def read_serial():
+    try:
+        ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+        print("Serial port opened.")
+        while True:
+            if ser.in_waiting >= 2:
+                data = ser.read(2)
+                packet = int.from_bytes(data, byteorder='big')
+                insert_packet(packet)
+    except serial.SerialException as e:
+        print(f"Serial error: {e}")
+
+# GUI
+root = Tk()
+root.title("Glitch Detection & Characterization")
+
+# Glitch counter label
+counter_label = Label(root, text="Glitches detected: 0", font=("Arial", 12))
+counter_label.pack(pady=(10, 0))
+
+# Table
+columns = ("Glitch Width (ns)", "TDC Value", "Time (s)", "Glitch State (H/L)")
+tree = ttk.Treeview(root, columns=columns, show="headings", height=8)
+for col in columns:
+    tree.heading(col, text=col)
+    tree.column(col, width=150, anchor="center")
+tree.pack(padx=10, pady=10, fill="x")
+
+# Plot
+fig, ax = plt.subplots(figsize=(6, 4))
+canvas = FigureCanvasTkAgg(fig, master=root)
+canvas.get_tk_widget().pack(padx=10, pady=10, fill="both", expand=True)
+
+# Start threads
+threading.Thread(target=read_serial, daemon=True).start()
+root.after(1000, update_distribution_chart)
+
+root.mainloop()
 
