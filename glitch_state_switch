@@ -1,1 +1,47 @@
+-- decrementButton.vhd
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
+entity glitch_state_button is
+    Port (
+        clock : in STD_LOGIC;
+        button : in STD_LOGIC;
+        debounced_button : out STD_LOGIC
+    );
+end glitch_state_button;
+
+architecture GlitchStateButton of glitch_state_button is
+    signal button_debounced : STD_LOGIC := '0';
+    signal last_button_state : STD_LOGIC := '0';
+    signal toggle_state : STD_LOGIC := '0';  -- holds the current glitch mode
+
+
+    component buttonDebouncer
+        port (
+            clock : in std_logic;
+            button : in std_logic;
+            debounced : out std_logic
+        );
+    end component;
+
+begin
+    debouncer_inst : buttonDebouncer
+        port map (
+            clock => clock,
+            button => button,
+            debounced => button_debounced
+        );
+    
+     -- toggle on rising edge of debounced button
+    process(clock)
+    begin
+        if rising_edge(clock) then
+            if button_debounced = '1' and last_button_state = '0' then
+                toggle_state <= not toggle_state;
+            end if;
+            last_button_state <= button_debounced;
+        end if;
+    end process;
+
+    debounced_button <= toggle_state;
+end GlitchStateButton;
