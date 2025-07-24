@@ -1,1 +1,63 @@
+#include "xparameters.h"
+#include "xgpio.h"
+#include "xil_printf.h"
+#include "xuartps.h"
+#include "sleep.h"
 
+#define UART_BASEADDR XPAR_XUARTPS_0_BASEADDR
+
+XUartPs Uart_Ps;  // UART driver instance
+
+int main() {
+    XGpio gpio;
+    int status;
+
+    // Initialize GPIO
+    status = XGpio_Initialize(&gpio, XPAR_AXI_GPIO_0_DEVICE_ID);
+    if (status != XST_SUCCESS) {
+        xil_printf("GPIO init failed!\r\n");
+        return XST_FAILURE;
+    }
+
+    // Set Channel 1 as input
+    XGpio_SetDataDirection(&gpio, 1, 0xFFFF);
+
+    // Initialize UART
+    XUartPs_Config *Config = XUartPs_LookupConfig(UART_BASEADDR);
+    if (!Config) {
+        xil_printf("UART lookup failed!\r\n");
+        return XST_FAILURE;
+    }
+
+    status = XUartPs_CfgInitialize(&Uart_Ps, Config, Config->BaseAddress);
+    if (status != XST_SUCCESS) {
+        xil_printf("UART init failed!\r\n");
+        return XST_FAILURE;
+    }
+
+    // Set baud rate
+    XUartPs_SetBaudRate(&Uart_Ps, 115200);
+
+    // Send a start signal (0xFFFF) to Python GUI
+    u8 start_packet[2] = { 0xFF, 0xFF };
+    XUartPs_Send(&Uart_Ps, start_packet, 2);
+
+    u16 last_val = 0xFFFF;
+
+    while (1) {
+        u16 data = XGpio_DiscreteRead(&gpio, 1);
+
+        if (data != last_val) {
+            u8 packet[2];
+            packet[0] = (data >> 8) & 0xFF;
+            packet[1] = data & 0xFF;
+
+            XUartPs_Send(&Uart_Ps, packet, 2);
+            last_val = data;
+        }
+
+        usleep(1000);
+    }
+
+    return 0;
+}
