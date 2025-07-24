@@ -1,1 +1,63 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
+entity tdc is
+    Port (        
+        pulse_in   : in  STD_LOGIC;
+        code        : out STD_LOGIC_VECTOR(7 downto 0)              
+    );
+end tdc;
+
+architecture Structural of tdc is
+
+    -- Señales internas
+    signal q          : STD_LOGIC;
+    signal qnot       : STD_LOGIC;
+    signal co_taps    : STD_LOGIC_VECTOR(255 downto 0);
+    signal reset_delay: STD_LOGIC_VECTOR(3 downto 0);
+    signal sampled_taps: STD_LOGIC_VECTOR(255 downto 0):= (others => '0');  -- snapshot del vector
+    signal code_internal : STD_LOGIC_VECTOR(7 downto 0);    
+    
+begin    
+    --D Latch inicial para el start pulse
+    U_LATCH : entity work.d_latch
+        port map (
+            D     => pulse_in,
+            Q     => q,
+            Qnot => qnot
+        );
+
+    -- Delay line con CARRY4
+    U_DELAY_LINE : entity work.STAGES
+        port map (
+            start_pulse => q,
+            co_taps     => co_taps
+        );
+        
+    -- Retardo para reset (4 stages)
+    U_RESET_DELAY : entity work.delay_reset
+        port map (
+            start_pulse => qnot,
+            co_taps     => reset_delay
+        );
+   
+-- Flip-flops con reset
+    gen_ff: for i in 0 to 255 generate
+        U_FF: entity work.d_ff_async_reset
+            port map (               
+                D   => co_taps(i),
+                reset => reset_delay(0),
+                Q   => sampled_taps(i)
+            );
+end generate;
+    -- Priority Encoder
+    U_Encoder : entity work.priority_encoder_255
+        port map (
+            inputs => sampled_taps,
+            code   => code_internal
+        );
+
+    code <= code_internal;     
+        
+end Structural;
