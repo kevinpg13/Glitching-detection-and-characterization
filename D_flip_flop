@@ -5,7 +5,6 @@ entity d_ff_async_reset is
     Port (
         D    : in  STD_LOGIC;      
         reset: in  STD_LOGIC;
-        --clk: in STD_LOGIC;
         Q    : out STD_LOGIC
     );
 end d_ff_async_reset;
