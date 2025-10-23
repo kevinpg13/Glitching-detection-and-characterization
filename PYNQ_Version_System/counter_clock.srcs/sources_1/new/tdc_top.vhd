@@ -1,0 +1,123 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+library UNISIM;               -- esto se agrego          
+use UNISIM.VComponents.all;   -- esto se agrego            
+
+entity tdc is
+    Port (
+        --clk : in STD_LOGIC;
+        pulse_in   : in  STD_LOGIC;
+        code        : out STD_LOGIC_VECTOR(7 downto 0)              
+    );
+end tdc;
+
+architecture Structural of tdc is
+
+    -- Señales internas
+    signal q          : STD_LOGIC;
+    signal qnot       : STD_LOGIC;
+    signal co_taps    : STD_LOGIC_VECTOR(0 to 255);
+    signal sampled_taps: STD_LOGIC_VECTOR(0 to 255):= (others => '0');
+    signal code_internal : STD_LOGIC_VECTOR(7 downto 0);
+    --signal clk1_generated      : STD_LOGIC;
+    signal reset              : STD_LOGIC := '0';
+    --signal pll_locked         : STD_LOGIC;
+    signal reset_delay: STD_LOGIC_VECTOR(0 to 3);
+    signal qnot_dly : STD_LOGIC;  -- retardo elegido para comparar con qnot y crear una puerta para proporcionar un code 
+    signal window : STD_LOGIC;
+    --signal clk_ibuf : std_logic;-- esto se agrego  
+--component ila_0
+    --port (
+        --clk : in std_logic;
+        --probe0 : in std_logic_vector(7 downto 0);
+        --probe1 : in std_logic;
+        --probe2 : in std_logic;
+        --probe3 : in std_logic;
+        --probe4 : in std_logic;
+        --probe5 : in std_logic_vector(0 to 3)
+        --probe6 : in std_logic_vector(0 to 255)
+  -- );
+--end component;
+
+--component clk_wiz_0
+    --port ( 
+     --clk_in1 : in STD_LOGIC;
+     --reset : in STD_LOGIC;
+     --clk_out1 : out STD_LOGIC;      
+     --locked : out STD_LOGIC );
+   -- end component;
+    
+begin  
+--IBUF_clk : IBUF-- esto se agrego  
+  --port map (-- esto se agrego  
+    --I => clk,-- esto se agrego  
+    --O => clk_ibuf-- esto se agrego  
+  --);-- esto se agrego  
+  
+--u_pll_slow : clk_wiz_0
+       -- port map ( 
+        --clk_in1  => clk,
+        --reset    => reset,
+        --clk_out1 => clk1_generated,  -- clk que va al TDC
+        --locked   => pll_locked 
+         --);
+
+    
+    -- D Latch inicial para el start pulse
+    U_LATCH : entity work.d_latch
+        port map (
+            D     =>pulse_in,--clk1_generated
+            Q     => q,
+            Qnot => qnot
+        );
+
+    -- Delay line con CARRY4
+    U_DELAY_LINE : entity work.STAGES
+        port map (
+            start_pulse => q,
+            co_taps     => co_taps
+        );
+    -- Retardo para reset (4 stages)
+    U_RESET_DELAY : entity work.delay_reset
+        port map (
+            start_pulse => qnot,
+            delay_co_taps => reset_delay
+        );
+        
+    qnot_dly <= reset_delay(2);   -- estoy haciendo el intento con la etapa(2); si hace falta margen o sobra , puedo usar (0-1-2)
+    
+             
+    --Flip-flops con reset
+    gen_ff: for i in 0 to 255 generate
+        U_FF: entity work.d_ff_async_reset
+            port map (
+                D   => co_taps(i),
+                reset => reset_delay(3),
+                Q   => sampled_taps(i)
+            );
+    end generate ;        
+    -- Priority Encoder
+    U_Encoder : entity work.priority_encoder_256
+        port map (
+            inputs     => sampled_taps,
+            qnot       => qnot,
+            qnot_dly   => qnot_dly,
+            code       => code_internal,
+            code_valid => window      -- puedo conectarla al ILA si quiero ver el pulso de captura
+        );
+
+    code <= code_internal;     
+   -- U_ILA: ila_0
+       -- port map (
+       -- clk    => clk1_generated,
+       -- probe0 => code_internal,
+       -- probe1 => qnot_dly,
+        --probe2 => window,
+        --probe3 => clk1_generated,
+        --probe4 => qnot,
+        --probe5 => reset_delay
+        --probe6 => sampled_taps      
+        --);    
+end Structural;

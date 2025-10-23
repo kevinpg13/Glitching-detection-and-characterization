@@ -1,0 +1,39 @@
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+library UNISIM;
+use UNISIM.VComponents.all;
+
+entity delay_reset is
+    Port (
+        start_pulse : in  STD_LOGIC;
+        delay_co_taps     : out STD_LOGIC_VECTOR(0 to 3)
+    );
+end delay_reset;
+
+architecture Structural of delay_reset is
+    signal co  : STD_LOGIC_VECTOR(3 downto 0);
+    signal s   : STD_LOGIC_VECTOR(3 downto 0); 
+    signal di  : STD_LOGIC_VECTOR(3 downto 0); 
+    
+    
+
+
+begin
+    s  <= (others => '1');  -- S = "1111" permanentemente
+    di <= (others => '0');  -- DI = "0000" permanentemente
+
+    U_CARRY : CARRY4
+    port map (
+        CI     => '0',
+        CYINIT => start_pulse,
+        DI     => di,
+        S      => s,
+        CO     => co,
+        O      => open
+    );
+
+    delay_co_taps <= co;
+
+end Structural;

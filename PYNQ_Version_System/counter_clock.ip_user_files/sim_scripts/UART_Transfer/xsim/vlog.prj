@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.1/data/xilinx_vip/include" --include "../../../../counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl" --include "../../../../counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d47c/hdl" \
+"../../../bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/sim/UART_Transfer_processing_system7_0_0.v" \
+"../../../bd/UART_Transfer/ip/UART_Transfer_auto_pc_0/sim/UART_Transfer_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

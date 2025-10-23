@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "C:/Xilinx/Vivado/2024.1/data/xilinx_vip/include" --include "../../../ipstatic" \
+"../../../../counter_clock.gen/sources_1/ip/clk_wiz_1_1/clk_wiz_1_clk_wiz.v" \
+"../../../../counter_clock.gen/sources_1/ip/clk_wiz_1_1/clk_wiz_1.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

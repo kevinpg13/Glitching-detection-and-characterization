@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity priority_encoder_256 is
+    Port (
+        inputs     : in  STD_LOGIC_VECTOR(0 to 255);  -- taps ya "congelados"
+        qnot       : in  STD_LOGIC;                   -- complemento del latch D
+        qnot_dly   : in  STD_LOGIC;                   -- retardo corto respecto a qnot
+        code       : out STD_LOGIC_VECTOR(7 downto 0);
+        code_valid : out STD_LOGIC                    -- pulso ~ ancho de la ventana
+    );
+end priority_encoder_256;
+
+architecture Behavioral of priority_encoder_256 is
+    signal code_comb : STD_LOGIC_VECTOR(7 downto 0);
+    signal window  : STD_LOGIC;  -- ventana breve tras qnot↑
+begin
+    -- Ventana: 1 entre qnot=1 y qnot_dly=0 (pulso corto definido por la delay line de reset o complemento de q)
+    window   <= qnot and not qnot_dly;
+    code_valid <= window;
+
+    -- Priority combinacional (prioridad 255 > ... > 0)
+    comb: process(inputs)
+        variable tmp : unsigned(7 downto 0);
+    begin
+        tmp := (others => '0');
+        for i in 255 downto 0 loop
+            if inputs(i) = '1' then
+                tmp := to_unsigned(i, 8);
+                exit;
+            end if;
+        end loop;
+        code_comb <= std_logic_vector(tmp); -- MSB→bit7, LSB→bit0
+    end process;
+
+    -- "Puerta" de salida: publica solo durante la ventana
+    gate_out: process(code_comb, window)
+    begin
+        if window = '1' then
+            code <= code_comb;
+        else
+            code <= (others => '0');
+        end if;
+    end process;
+end Behavioral;

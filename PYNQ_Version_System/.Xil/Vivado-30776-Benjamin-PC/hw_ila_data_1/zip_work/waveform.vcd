@@ -1,0 +1,37 @@
+$date
+        2025-Sep-25 18:28:29
+$end
+$version
+        Vivado v2024.1.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 4 " UART_Transfer_i/clock_out_top_0/U0/fifo_count_slv [3:0] $end
+$var reg 1 & UART_Transfer_i/clock_out_top_0/U0/glitching_done $end
+$var reg 8 ' UART_Transfer_i/clock_out_top_0/U0/tdc_code [7:0] $end
+$var reg 16 / UART_Transfer_i/clock_out_top_0/U0/glitch_fifo_debug_1 [15:0] $end
+$var reg 3 ? UART_Transfer_i/clock_out_top_0/U0/display_ptr_slv [2:0] $end
+$var reg 8 B UART_Transfer_i/clock_out_top_0/U0/tdc_code_latched [7:0] $end
+$var reg 16 J UART_Transfer_i/clock_out_top_0/U0/glitch_fifo_debug_0 [15:0] $end
+$var reg 1 Z _TRIGGER $end
+$var reg 1 [ _WINDOW $end
+$var reg 1 \ _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+0&
+b1 '
+b10000000 /
+b11 ?
+b1 B
+b100000000 J
+0Z
+1[
+0\
+$end
+#16384
+1Z

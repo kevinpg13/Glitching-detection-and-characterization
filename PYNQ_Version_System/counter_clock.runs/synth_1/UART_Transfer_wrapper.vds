@@ -1,0 +1,989 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Thu Oct  9 20:10:17 2025
+# Process ID: 28460
+# Current directory: C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1
+# Command line: vivado.exe -log UART_Transfer_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source UART_Transfer_wrapper.tcl
+# Log file: C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/UART_Transfer_wrapper.vds
+# Journal file: C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1\vivado.jou
+# Running On        :Benjamin-PC
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :12th Gen Intel(R) Core(TM) i7-12650H
+# CPU Frequency     :2688 MHz
+# CPU Physical cores:10
+# CPU Logical cores :16
+# Host memory       :16831 MB
+# Swap memory       :10200 MB
+# Total Virtual     :27032 MB
+# Available Virtual :5400 MB
+#-----------------------------------------------------------
+source UART_Transfer_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 534.164 ; gain = 146.398
+Command: read_checkpoint -auto_incremental -incremental C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/utils_1/imports/synth_1/clock_out_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/utils_1/imports/synth_1/clock_out_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top UART_Transfer_wrapper -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6412
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1461.109 ; gain = 449.812
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'UART_Transfer_wrapper' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/hdl/UART_Transfer_wrapper.vhd:42]
+INFO: [Synth 8-3491] module 'UART_Transfer' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:580' bound to instance 'UART_Transfer_i' of component 'UART_Transfer' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/hdl/UART_Transfer_wrapper.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'UART_Transfer' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:611]
+INFO: [Synth 8-3491] module 'UART_Transfer_axi_gpio_0_0' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/synth/UART_Transfer_axi_gpio_0_0.vhd:59' bound to instance 'axi_gpio_0' of component 'UART_Transfer_axi_gpio_0_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:851]
+INFO: [Synth 8-638] synthesizing module 'UART_Transfer_axi_gpio_0_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/synth/UART_Transfer_axi_gpio_0_0.vhd:84]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 9 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_GPIO_WIDTH bound to: 16 - type: integer 
+	Parameter C_GPIO2_WIDTH bound to: 32 - type: integer 
+	Parameter C_ALL_INPUTS bound to: 1 - type: integer 
+	Parameter C_ALL_INPUTS_2 bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS bound to: 0 - type: integer 
+	Parameter C_ALL_OUTPUTS_2 bound to: 0 - type: integer 
+	Parameter C_INTERRUPT_PRESENT bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT bound to: 32'b11111111111111111111111111111111 
+	Parameter C_IS_DUAL bound to: 0 - type: integer 
+	Parameter C_DOUT_DEFAULT_2 bound to: 32'b00000000000000000000000000000000 
+	Parameter C_TRI_DEFAULT_2 bound to: 32'b11111111111111111111111111111111 
+INFO: [Synth 8-3491] module 'axi_gpio' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:1270' bound to instance 'U0' of component 'axi_gpio' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/synth/UART_Transfer_axi_gpio_0_0.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'axi_gpio' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:1356]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'GPIO_Core' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:181]
+INFO: [Synth 8-226] default block is never used [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:446]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:736]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:772]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:788]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:804]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:821]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6' to cell 'FDR' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:837]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_Core' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:181]
+INFO: [Synth 8-256] done synthesizing module 'axi_gpio' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:1356]
+INFO: [Synth 8-256] done synthesizing module 'UART_Transfer_axi_gpio_0_0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/synth/UART_Transfer_axi_gpio_0_0.vhd:84]
+INFO: [Synth 8-3491] module 'UART_Transfer_clock_out_top_0_0' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_clock_out_top_0_0/synth/UART_Transfer_clock_out_top_0_0.vhd:56' bound to instance 'clock_out_top_0' of component 'UART_Transfer_clock_out_top_0_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:874]
+INFO: [Synth 8-638] synthesizing module 'UART_Transfer_clock_out_top_0_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_clock_out_top_0_0/synth/UART_Transfer_clock_out_top_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'clock_out_top' declared at 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:5' bound to instance 'U0' of component 'clock_out_top' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_clock_out_top_0_0/synth/UART_Transfer_clock_out_top_0_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'clock_out_top' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:19]
+INFO: [Synth 8-3491] module 'IBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:73643' bound to instance 'ibuf_inst' of component 'IBUF' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:202]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:73643]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:73643]
+INFO: [Synth 8-3491] module 'BUFG' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:1951' bound to instance 'bufg_inst' of component 'BUFG' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:205]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:1951]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:1951]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/.Xil/Vivado-28460-Benjamin-PC/realtime/clk_wiz_0_stub.vhdl:6' bound to instance 'u_pll_slow' of component 'clk_wiz_0' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:210]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/.Xil/Vivado-28460-Benjamin-PC/realtime/clk_wiz_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'clk_wiz_1' declared at 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/.Xil/Vivado-28460-Benjamin-PC/realtime/clk_wiz_1_stub.vhdl:6' bound to instance 'u_pll_fast' of component 'clk_wiz_1' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:213]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_1' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/.Xil/Vivado-28460-Benjamin-PC/realtime/clk_wiz_1_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'ila_0' declared at 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/.Xil/Vivado-28460-Benjamin-PC/realtime/ila_0_stub.vhdl:6' bound to instance 'ila_inst' of component 'ila_0' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:216]
+INFO: [Synth 8-638] synthesizing module 'ila_0' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/.Xil/Vivado-28460-Benjamin-PC/realtime/ila_0_stub.vhdl:20]
+	Parameter COUNTER_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-3491] module 'pwm_generator' declared at 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/PWM.vhd:5' bound to instance 'glitch_gen' of component 'pwm_generator' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:233]
+INFO: [Synth 8-638] synthesizing module 'pwm_generator' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/PWM.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'pwm_generator' (0#1) [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/PWM.vhd:17]
+INFO: [Synth 8-3491] module 'glitch_control_module' declared at 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/glitch_ctrl.vhd:5' bound to instance 'glitch_ctrl' of component 'glitch_control_module' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:243]
+INFO: [Synth 8-638] synthesizing module 'glitch_control_module' [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/glitch_ctrl.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'glitch_control_module' (0#1) [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/glitch_ctrl.vhd:16]
+WARNING: [Synth 8-614] signal 'glitch_mode' is read in the process but is not in the sensitivity list [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:318]
+INFO: [Synth 8-256] done synthesizing module 'clock_out_top' (0#1) [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'UART_Transfer_clock_out_top_0_0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_clock_out_top_0_0/synth/UART_Transfer_clock_out_top_0_0.vhd:69]
+INFO: [Synth 8-3491] module 'UART_Transfer_processing_system7_0_0' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:53' bound to instance 'processing_system7_0' of component 'UART_Transfer_processing_system7_0_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:885]
+INFO: [Synth 8-6157] synthesizing module 'UART_Transfer_processing_system7_0_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
+INFO: [Synth 8-6157] synthesizing module 'BIBUF' [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:1598]
+INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (0#1) [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:1598]
+INFO: [Synth 8-6157] synthesizing module 'PS7' [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:115258]
+INFO: [Synth 8-6155] done synthesizing module 'PS7' (0#1) [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:115258]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'M_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_ACP_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_HP2_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'S_AXI_HP3_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'DMA0_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'DMA1_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'DMA2_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7071] port 'DMA3_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:323]
+INFO: [Synth 8-6155] done synthesizing module 'UART_Transfer_processing_system7_0_0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/synth/UART_Transfer_processing_system7_0_0.v:53]
+INFO: [Synth 8-638] synthesizing module 'UART_Transfer_ps7_0_axi_periph_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:393]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_LLRLD6' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:79]
+INFO: [Synth 8-3491] module 'UART_Transfer_auto_pc_0' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_auto_pc_0/synth/UART_Transfer_auto_pc_0.v:53' bound to instance 'auto_pc' of component 'UART_Transfer_auto_pc_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:260]
+INFO: [Synth 8-6157] synthesizing module 'UART_Transfer_auto_pc_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_auto_pc_0/synth/UART_Transfer_auto_pc_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_axi_protocol_converter' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5285]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4704]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_aw_channel' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4360]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_cmd_translator' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3720]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_incr_cmd' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3216]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_incr_cmd' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3216]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_wrap_cmd' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2982]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_wrap_cmd' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2982]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_cmd_translator' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3720]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_wr_cmd_fsm' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3392]
+INFO: [Synth 8-226] default block is never used [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3446]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_wr_cmd_fsm' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3392]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_aw_channel' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4360]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_b_channel' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3906]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_b_channel' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3906]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_ar_channel' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4516]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3546]
+INFO: [Synth 8-226] default block is never used [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3608]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3546]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_ar_channel' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4516]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_r_channel' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4155]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo__parameterized1' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo__parameterized1' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6157] synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo__parameterized2' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_simple_fifo__parameterized2' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:2852]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s_r_channel' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4155]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axi_register_slice' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:3718]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized1' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized1' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized2' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized2' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axi_register_slice' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:3718]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_32_axi_register_slice' is unconnected for instance 'SI_REG' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4871]
+WARNING: [Synth 8-7023] instance 'SI_REG' of module 'axi_register_slice_v2_1_32_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axi_register_slice__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:3718]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized3' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized3' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized4' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized4' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized5' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized5' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized6' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axic_register_slice__parameterized6' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_32_axi_register_slice__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:3718]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_32_axi_register_slice' is unconnected for instance 'MI_REG' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5126]
+WARNING: [Synth 8-7023] instance 'MI_REG' of module 'axi_register_slice_v2_1_32_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5126]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_b2s' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4704]
+INFO: [Synth 8-6155] done synthesizing module 'axi_protocol_converter_v2_1_32_axi_protocol_converter' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:5285]
+INFO: [Synth 8-6155] done synthesizing module 'UART_Transfer_auto_pc_0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_auto_pc_0/synth/UART_Transfer_auto_pc_0.v:53]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_LLRLD6' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:79]
+INFO: [Synth 8-256] done synthesizing module 'UART_Transfer_ps7_0_axi_periph_0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:393]
+INFO: [Synth 8-3491] module 'UART_Transfer_rst_ps7_0_100M_0' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/synth/UART_Transfer_rst_ps7_0_100M_0.vhd:59' bound to instance 'rst_ps7_0_100M' of component 'UART_Transfer_rst_ps7_0_100M_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:1017]
+INFO: [Synth 8-638] synthesizing module 'UART_Transfer_rst_ps7_0_100M_0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/synth/UART_Transfer_rst_ps7_0_100M_0.vhd:74]
+	Parameter C_FAMILY bound to: zynq - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at 'c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1271' bound to instance 'U0' of component 'proc_sys_reset' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/synth/UART_Transfer_rst_ps7_0_100M_0.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1330]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1399]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1415]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1441]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1464]
+INFO: [Common 17-14] Message 'Synth 8-113' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-638] synthesizing module 'lpf' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-3491] module 'SRL16' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:137246' bound to instance 'POR_SRL_I' of component 'SRL16' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:873]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:137246]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (0#1) [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:137246]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync__parameterized0' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync__parameterized0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/2a4f/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/3a26/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1330]
+INFO: [Synth 8-256] done synthesizing module 'UART_Transfer_rst_ps7_0_100M_0' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/synth/UART_Transfer_rst_ps7_0_100M_0.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'UART_Transfer' (0#1) [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/synth/UART_Transfer.vhd:611]
+INFO: [Synth 8-256] done synthesizing module 'UART_Transfer_wrapper' (0#1) [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/hdl/UART_Transfer_wrapper.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[0].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[1].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[2].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[3].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[4].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[5].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[6].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[7].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[8].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[9].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[10].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[11].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[12].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[13].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[14].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+WARNING: [Synth 8-6014] Unused sequential element Not_Dual.ALLIN1_ND.READ_REG_GEN[15].GPIO_DBus_i_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/376d/hdl/axi_gpio_v2_0_vh_rfs.vhd:354]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'U0'. This will prevent further optimization [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_clock_out_top_0_0/synth/UART_Transfer_clock_out_top_0_0.vhd:93]
+WARNING: [Synth 8-3848] Net clean_pll_locked in module/entity clock_out_top does not have driver. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:80]
+WARNING: [Synth 8-3848] Net clean_clk_out in module/entity clock_out_top does not have driver. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:13]
+WARNING: [Synth 8-3848] Net lfsr_output in module/entity clock_out_top does not have driver. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/sources_1/new/counter_clock.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element state_r1_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3596]
+WARNING: [Synth 8-6014] Unused sequential element s_arlen_r_reg was removed.  [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/d59d/hdl/axi_protocol_converter_v2_1_vl_rfs.v:3597]
+WARNING: [Synth 8-7129] Port prmry_aclk in module cdc_sync__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_resetn in module cdc_sync__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[1] in module cdc_sync__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[0] in module cdc_sync__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scndry_resetn in module cdc_sync__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_32_axic_register_slice__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_32_axic_register_slice__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_32_axic_register_slice__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_32_axic_register_slice__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_32_axic_register_slice__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_32_axic_register_slice__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_32_axic_register_slice__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_32_axic_register_slice__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bid[0] in module axi_infrastructure_v1_1_0_vector2axi__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[0] in module axi_infrastructure_v1_1_0_vector2axi__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rid[0] in module axi_infrastructure_v1_1_0_vector2axi__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rlast in module axi_infrastructure_v1_1_0_vector2axi__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_infrastructure_v1_1_0_vector2axi__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awid[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[7] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[6] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[5] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[4] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlen[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awburst[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awburst[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awlock[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awcache[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awcache[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awcache[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awcache[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awqos[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awqos[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awqos[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awqos[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awuser[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wlast in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wuser[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arid[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[7] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[6] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[5] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[4] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlen[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arburst[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arburst[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arlock[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arcache[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arcache[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arcache[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arcache[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arqos[3] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arqos[2] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arqos[1] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arqos[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_aruser[0] in module axi_infrastructure_v1_1_0_axi2vector__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk2x in module axi_register_slice_v2_1_32_axi_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_32_axic_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_32_axic_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[0] in module axi_infrastructure_v1_1_0_vector2axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_infrastructure_v1_1_0_vector2axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[3] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[2] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[1] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awregion[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awuser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wuser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[3] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[2] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[1] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arregion[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_aruser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk2x in module axi_register_slice_v2_1_32_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_arlen[7] in module axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_arlen[6] in module axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_arlen[5] in module axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_arlen[4] in module axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_arlen[3] in module axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_arlen[2] in module axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1730.391 ; gain = 719.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1730.391 ; gain = 719.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1730.391 ; gain = 719.094
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1730.391 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 109 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'UART_Transfer_i/clock_out_top_0/U0/ila_inst'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'UART_Transfer_i/clock_out_top_0/U0/ila_inst'
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/ip/clk_wiz_1_1/clk_wiz_1/clk_wiz_1_in_context.xdc] for cell 'UART_Transfer_i/clock_out_top_0/U0/u_pll_fast'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/ip/clk_wiz_1_1/clk_wiz_1/clk_wiz_1_in_context.xdc] for cell 'UART_Transfer_i/clock_out_top_0/U0/u_pll_fast'
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'UART_Transfer_i/clock_out_top_0/U0/u_pll_slow'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'UART_Transfer_i/clock_out_top_0/U0/u_pll_slow'
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/UART_Transfer_processing_system7_0_0.xdc] for cell 'UART_Transfer_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/UART_Transfer_processing_system7_0_0.xdc] for cell 'UART_Transfer_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_processing_system7_0_0/UART_Transfer_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/UART_Transfer_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/UART_Transfer_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/UART_Transfer_axi_gpio_0_0_board.xdc] for cell 'UART_Transfer_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/UART_Transfer_axi_gpio_0_0_board.xdc] for cell 'UART_Transfer_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/UART_Transfer_axi_gpio_0_0.xdc] for cell 'UART_Transfer_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_axi_gpio_0_0/UART_Transfer_axi_gpio_0_0.xdc] for cell 'UART_Transfer_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/UART_Transfer_rst_ps7_0_100M_0_board.xdc] for cell 'UART_Transfer_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/UART_Transfer_rst_ps7_0_100M_0_board.xdc] for cell 'UART_Transfer_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/UART_Transfer_rst_ps7_0_100M_0.xdc] for cell 'UART_Transfer_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/UART_Transfer_rst_ps7_0_100M_0.xdc] for cell 'UART_Transfer_i/rst_ps7_0_100M/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ip/UART_Transfer_rst_ps7_0_100M_0/UART_Transfer_rst_ps7_0_100M_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/UART_Transfer_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/UART_Transfer_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc]
+WARNING: [Vivado 12-584] No ports matched 'ref_locked_led'. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'clean_locked_led'. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'reference_clk_out'. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'corrupted_clk_out'. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'glitch_detect_out'. [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc:20]
+Finished Parsing XDC File [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/UART_Transfer_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.srcs/constrs_1/new/xdc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/UART_Transfer_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/UART_Transfer_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/UART_Transfer_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/UART_Transfer_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1816.371 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 109 instances were transformed.
+  FDR => FDRE: 108 instances
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1816.371 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'UART_Transfer_i/clock_out_top_0/U0/ila_inst' at clock pin 'clk' is different from the actual clock period '5.263', this can lead to different synthesis results.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/processing_system7_0/inst. (constraint file  C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/dont_touch.xdc, line 37).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/axi_gpio_0/U0. (constraint file  C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/dont_touch.xdc, line 40).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/rst_ps7_0_100M/U0. (constraint file  C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/dont_touch.xdc, line 48).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/clock_out_top_0/U0/ila_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/clock_out_top_0/U0/u_pll_fast. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/clock_out_top_0/U0/u_pll_slow. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/processing_system7_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/axi_gpio_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/ps7_0_axi_periph. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/rst_ps7_0_100M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for UART_Transfer_i/clock_out_top_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_32_b2s_wr_cmd_fsm'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE2 |                             0001 |                               00
+                  iSTATE |                             0010 |                               01
+                 iSTATE0 |                             0100 |                               10
+                 iSTATE1 |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 SM_IDLE |                               01 |                               00
+               SM_CMD_EN |                               11 |                               01
+         SM_CMD_ACCEPTED |                               10 |                               10
+            SM_DONE_WAIT |                               00 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_32_b2s_wr_cmd_fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 SM_IDLE |                               01 |                               00
+               SM_CMD_EN |                               11 |                               01
+         SM_CMD_ACCEPTED |                               10 |                               10
+                 SM_DONE |                               00 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi_protocol_converter_v2_1_32_b2s_rd_cmd_fsm'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   28 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   12 Bit       Adders := 8     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 5     
+	   2 Input    2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               66 Bit    Registers := 4     
+	               47 Bit    Registers := 2     
+	               32 Bit    Registers := 2     
+	               28 Bit    Registers := 2     
+	               16 Bit    Registers := 4     
+	               14 Bit    Registers := 2     
+	               12 Bit    Registers := 9     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 7     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 70    
++---Muxes : 
+	   2 Input   66 Bit        Muxes := 4     
+	   2 Input   47 Bit        Muxes := 2     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 9     
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 6     
+	   2 Input    9 Bit        Muxes := 5     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 4     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 23    
+	   2 Input    2 Bit        Muxes := 20    
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 44    
+	   4 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/aw.aw_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1726]
+INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_axilite.gen_b2s_conv.axilite_b2s/SI_REG/ar.ar_pipe/m_payload_i_reg' and it is trimmed from '66' to '62' bits. [c:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.gen/sources_1/bd/UART_Transfer/ipshared/676c/hdl/axi_register_slice_v2_1_vl_rfs.v:1726]
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[7].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[8].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[9].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[10].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[11].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[12].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[13].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[14].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d2[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d2) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d3[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d3) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d4[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d4) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[4].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[5].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[6].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d5[15].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d5) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[0].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[1].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[2].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[3].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[4].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[5].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[6].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[7].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[8].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[9].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[10].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[11].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[12].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[13].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[14].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+INFO: [Synth 8-3332] Sequential element (gpio_core_1/Not_Dual.INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_CROSS_PLEVEL_IN2SCNDRY_bus_d6[15].CROSS2_PLEVEL_IN2SCNDRY_s_level_out_bus_d6) is unused and will be removed from module axi_gpio.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (FDRE_inst) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (BSR_OUT_DFF[0].FDRE_BSR) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N) is unused and will be removed from module proc_sys_reset.
+WARNING: [Synth 8-3332] Sequential element (PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module proc_sys_reset.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Dynamic Shift Register Report:
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | memory_reg[3]  | 20     | 20         | 20     | 0       | 0      | 0      | 0      | 
+|dsrl__1     | memory_reg[3]  | 2      | 2          | 2      | 0       | 0      | 0      | 0      | 
+|dsrl__2     | memory_reg[31] | 34     | 34         | 0      | 34      | 0      | 0      | 0      | 
+|dsrl__3     | memory_reg[31] | 13     | 13         | 0      | 13      | 0      | 0      | 0      | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |clk_wiz_1     |         1|
+|3     |ila_0         |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------------+------+
+|      |Cell           |Count |
++------+---------------+------+
+|1     |clk_wiz_0_bbox |     1|
+|2     |clk_wiz_1_bbox |     1|
+|3     |ila_0_bbox     |     1|
+|4     |BIBUF          |   130|
+|5     |BUFG           |     2|
+|6     |CARRY4         |    56|
+|7     |LUT1           |   123|
+|8     |LUT2           |    51|
+|9     |LUT3           |   213|
+|10    |LUT4           |    78|
+|11    |LUT5           |    75|
+|12    |LUT6           |   141|
+|13    |PS7            |     1|
+|14    |SRL16          |     1|
+|15    |SRL16E         |    16|
+|16    |SRLC32E        |    45|
+|17    |FDR            |    36|
+|18    |FDRE           |   646|
+|19    |FDSE           |    36|
+|20    |IBUF           |     1|
++------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:33 . Memory (MB): peak = 1816.844 ; gain = 805.547
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 167 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:30 . Memory (MB): peak = 1816.844 ; gain = 719.094
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1816.844 ; gain = 805.547
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1816.844 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 93 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1816.844 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 37 instances were transformed.
+  FDR => FDRE: 36 instances
+  SRL16 => SRL16E: 1 instance 
+
+Synth Design complete | Checksum: 8f1fca06
+INFO: [Common 17-83] Releasing license: Synthesis
+350 Infos, 160 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:48 . Memory (MB): peak = 1816.844 ; gain = 1236.137
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1816.844 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/andre/OneDrive/Desktop/Sistema/counter_clock.runs/synth_1/UART_Transfer_wrapper.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file UART_Transfer_wrapper_utilization_synth.rpt -pb UART_Transfer_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  9 20:11:25 2025...

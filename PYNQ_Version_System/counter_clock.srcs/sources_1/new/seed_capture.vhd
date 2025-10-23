@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity seed_capture_module is
+    Port (
+        clk        : in  STD_LOGIC;
+        button     : in  STD_LOGIC;
+        seed_out   : out STD_LOGIC_VECTOR(15 downto 0)
+    );
+end seed_capture_module;
+
+architecture Behavioral of seed_capture_module is
+    signal counter : unsigned(15 downto 0) := (others => '0');
+    signal seed_reg : STD_LOGIC_VECTOR(15 downto 0);
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            counter <= counter + 1;
+
+            if button = '1' then
+                seed_reg <= std_logic_vector(counter);
+            end if;
+        end if;
+    end process;
+
+    seed_out <= seed_reg;
+end Behavioral;

@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity priority_encoder_255 is
+    Port (
+        inputs : in  STD_LOGIC_VECTOR(255 downto 0);
+        code   : out STD_LOGIC_VECTOR(7 downto 0)  -- 8 bits para representar 0 a 255
+    );
+end priority_encoder_255;
+
+architecture Behavioral of priority_encoder_255 is
+begin
+    process(inputs)
+    begin
+        code <= (others => '0'); -- default
+
+        for i in 255 downto 0 loop
+            if inputs(i) = '1' then
+                code <= std_logic_vector(to_unsigned(i, 8));
+                exit; -- termina al encontrar el primer '1'
+            end if;
+        end loop;
+    end process;
+end Behavioral;

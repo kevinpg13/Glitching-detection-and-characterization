@@ -1,0 +1,29 @@
+$date
+        2025-Sep-19 20:47:08
+$end
+$version
+        Vivado v2024.1.2 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 16 " UART_Transfer_i/clock_out_top_0/U0/gpio_latched [15:0] $end
+$var reg 1 2 UART_Transfer_i/clock_out_top_0/U0/glitching_done $end
+$var reg 8 3 UART_Transfer_i/clock_out_top_0/U0/tdc_code_latched [7:0] $end
+$var reg 1 ; _TRIGGER $end
+$var reg 1 < _WINDOW $end
+$var reg 1 = _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 "
+12
+b0 3
+0;
+1<
+0=
+$end
+#8192
+1;
